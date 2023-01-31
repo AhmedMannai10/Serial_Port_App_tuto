@@ -87,9 +87,10 @@ class _PortsPageState extends State<PortsPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => IOPortPage(
-                                    portName: port,
-                                  )),
+                            builder: (context) => IOPortPage(
+                              portName: port,
+                            ),
+                          ),
                         );
                       },
                     ),
