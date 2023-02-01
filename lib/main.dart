@@ -12,7 +12,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+
+        scaffoldBackgroundColor: Colors.grey[300],
+        // splashColor: Colors.bl,
+        primaryColor: Color(0xFF12181b),
+        appBarTheme: AppBarTheme(
+          color: Color(0xFF12181b),
+        ),
+        // scaffoldBackgroundColor: Colors.black,
+      ),
       title: 'Flutter Serial App',
       home: PortsPage(),
     );
