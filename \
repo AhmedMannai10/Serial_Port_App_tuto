@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_libserialport/flutter_libserialport.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+    List<String> ports = <String>[]; 
+
+    @override
+    void initState(){
+      super.initState();
+      setState(() {
+        ports = SerialPort.availablePorts;
+      });
+    }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar:  AppBar(title: const Text("Serial Port APP"), 
+        backgroundColor: const Color(0xff764abc)),
+
+        body: ListView.builder(
+                itemCount: ports.length,
+                itemBuilder: ( context,index) {
+                return ports.isEmpty ? 
+                     Container(
+                     decoration: BoxDecoration(color: Color(0xffA0A0B0)),
+                     padding: EdgeInsets.all(16),
+                     
+                      child:  Center(child: Text("There is no Available Port")),
+                    )
+                    : Container(
+                     decoration: BoxDecoration(color: Color(0xffFAFAFE)),
+                     margin: EdgeInsets.all(8.0),
+                     
+                        child:ListTile(title: Text(ports[index])));
+            },
+        ),
+    ) ;
+  }
+}

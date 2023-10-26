@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_libserialport: ^0.3.0
   go_router: ^7.1.1
+  expansion_tile_card: ^3.0.0
 
 dev_dependencies:
   flutter_test:
